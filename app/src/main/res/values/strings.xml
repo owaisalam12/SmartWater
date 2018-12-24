@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Smart Water</string>
+    <array name="menuOptions">
+        <item>Home</item>
+        <item>Stats</item>
+        <item>Option 3</item>
+        <item>Option 4</item>
+        <item>About</item>
+    </array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
