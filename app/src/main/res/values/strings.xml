@@ -2,9 +2,10 @@
     <string name="app_name">Smart Water</string>
     <array name="menuOptions">
         <item>Home</item>
-        <item>Stats</item>
-        <item>Option 3</item>
-        <item>Option 4</item>
+        <item>Water Level</item>
+        <item>Statistics</item>
+        <item>Notification Records</item>
+        <!--<item></item>-->
         <item>About</item>
     </array>
 

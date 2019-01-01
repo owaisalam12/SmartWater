@@ -1,28 +1,25 @@
 package com.example.oalam.smartwater;
 
-import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
 
 public class SplashActivity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 // Start main activity
-                startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                startActivity(new Intent(SplashActivity.this, MainActivity.class));
                 // close splash activity
                 finish();
             }
-        },1650);
+        }, 1650);
 
     }
 }

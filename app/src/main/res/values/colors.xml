@@ -8,7 +8,8 @@
     <color name="hint">#ffffff</color>
     <color name="blue">#142848</color>
     <color name="offwhite">#f4f6f6</color>
-
+    <color name="red">#d50000</color>
+    <color name="green">#43a047</color>
     <color name="splash">#73aacc</color>
 
 </resources>

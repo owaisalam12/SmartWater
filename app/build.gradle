@@ -39,7 +39,9 @@ dependencies {
     implementation 'com.github.GoodieBag:Pinview:v1.3'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'com.github.Shashank02051997:FancyAboutPage-Android:2.6'
-
+    implementation 'me.itangqi.waveloadingview:library:0.3.5'
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'me.grantland:autofittextview:0.2.+'
 }
 //apply plugin: 'com.google.gms.google-services'
 

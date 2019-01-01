@@ -10,7 +10,8 @@
     <item>
         <bitmap
             android:src="@drawable/home"
-            android:alpha="0.2"
+            android:gravity="fill"
+            android:alpha="0.08"
             />
 
     </item>
