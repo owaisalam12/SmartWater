@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home"
+    tools:context=".SensorFragment">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:alpha="0.7"
+        android:background="@color/blue" />
+    <!--<TextView-->
+    <!--android:id="@+id/welcomeText"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:textColor="#ffffff"-->
+    <!--android:text="Sensor Statistics"-->
+    <!--android:gravity="center"-->
+    <!--android:textSize="30dp"-->
+    <!--android:layout_marginTop="35dp"-->
+    <!--android:fontFamily="sans-serif-condensed"-->
+    <!--/>-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="50dp"
+        android:alpha="0.92"
+
+        android:background="@drawable/layout_bg">
+
+        <me.itangqi.waveloadingview.WaveLoadingView
+            android:id="@+id/waveLoadingView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            app:wlv_borderColor="@color/blue"
+            app:wlv_borderWidth="3dp"
+            app:wlv_round_rectangle="true"
+            app:wlv_shapeType="circle"
+            app:wlv_titleCenterColor="@android:color/white"
+            app:wlv_titleCenterSize="24sp"
+            app:wlv_titleCenterStrokeColor="@android:color/holo_blue_dark"
+
+            app:wlv_titleCenterStrokeWidth="3dp"
+            app:wlv_triangle_direction="north"
+            app:wlv_waveAmplitude="70"
+            app:wlv_waveColor="@color/blue" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/waveLoadingView"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:alpha="0.92"
+            android:background="@drawable/layout_sensor"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/turbidityText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Turbidity: "
+                android:textColor="@color/blue"
+                android:textSize="28dp" />
+
+            <TextView
+
+                android:id="@+id/turbidityValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/turbidityText"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text=""
+
+                android:textColor="@color/blue"
+                android:textSize="28dp" />
+
+
+            <TextView
+                android:id="@+id/LevelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/turbidityText"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Water Level: "
+                android:textColor="@color/blue"
+                android:textSize="28dp" />
+
+            <TextView
+                android:id="@+id/LevelValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/turbidityValue"
+                android:layout_toRightOf="@id/LevelText"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text=""
+                android:textColor="@color/blue"
+                android:textSize="28dp" />
+
+            <TextView
+                android:id="@+id/temperatureText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/LevelText"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Tempertaure: "
+                android:textColor="@color/blue"
+                android:textSize="28dp" />
+
+            <TextView
+                android:id="@+id/temperatureValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/LevelValue"
+                android:layout_toRightOf="@id/temperatureText"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text=""
+                android:textColor="@color/blue"
+                android:textSize="28dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/waveLoadingView"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:alpha="0.92"
+            android:background="@drawable/layout_sensor"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/currentWaterLevel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Current Water Level: "
+                android:textColor="@color/blue"
+                android:textSize="25dp" />
+
+            <TextView
+
+                android:id="@+id/currentWaterLevelValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/currentWaterLevel"
+                android:fontFamily="sans-serif-condensed"
+                android:text=""
+
+                android:textColor="@color/blue"
+                android:textSize="25dp" />
+
+
+            <TextView
+                android:id="@+id/estimatedTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/currentWaterLevel"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Estimated Time: "
+                android:textColor="@color/blue"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/estimatedTimeValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/currentWaterLevelValue"
+                android:layout_toRightOf="@id/estimatedTime"
+                android:fontFamily="sans-serif-condensed"
+                android:text=""
+                android:textColor="@color/blue"
+                android:textSize="25dp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

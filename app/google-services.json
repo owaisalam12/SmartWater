@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "728154444863",
+    "firebase_url": "https://smartwater-68317.firebaseio.com",
+    "project_id": "smartwater-68317",
+    "storage_bucket": "smartwater-68317.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:728154444863:android:e5826810faed53e4",
+        "android_client_info": {
+          "package_name": "com.example.oalam.smartwater"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "728154444863-ujto0ft26td8a5sfamriugseft3ic6rf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.oalam.smartwater",
+            "certificate_hash": "8c855714ae7e2924b10ddef05e498b11a3fd2be9"
+          }
+        },
+        {
+          "client_id": "728154444863-nuimq3nm8n698ac7oso6tat7i63vg363.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCS5Y85aQMpCMVGOxOhMdwvucaLjRHb95M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "728154444863-nuimq3nm8n698ac7oso6tat7i63vg363.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF">
+
+        <com.shashank.sony.fancyaboutpagelib.FancyAboutPage
+            android:id="@+id/fancyaboutpage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="8dp">
+
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/circularImageView"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="180dp"
+
+
+                android:layout_marginRight="10dp"
+
+                />
+        </com.shashank.sony.fancyaboutpagelib.FancyAboutPage>
+    </RelativeLayout>
+</ScrollView>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home"
+    tools:context=".VerifyPhoneActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:alpha="0.7"
+        android:background="@color/blue" />
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginRight="20dp"
+        android:alpha="0.92"
+        android:background="@drawable/layout_bg"
+        android:orientation="vertical"
+        android:padding="15dp"
+
+        >
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_gravity="center"
+            android:alpha="1"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="Please enter the verification code sent to +923xxxxxxxxx"
+            android:textColor="@color/blue" />
+
+        <com.goodiebag.pinview.Pinview
+            android:id="@+id/pinview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:alpha="1"
+            app:cursorVisible="false"
+            app:forceKeyboard="true"
+            app:inputType="number"
+            app:password="false"
+            app:pinHeight="42dp"
+            app:pinLength="6"
+            app:pinWidth="42dp"
+            app:splitWidth="4dp" />
+
+
+        <com.dx.dxloadingbutton.lib.LoadingButton
+            android:id="@+id/loading_btn"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="30dp"
+            app:lb_btnColor="@color/colorPrimary"
+            app:lb_btnText="Verify"
+            app:lb_cornerRadius="20"
+            app:lb_resetAfterFailed="true" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/animate_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark"
+        android:visibility="invisible" />
+
+
+</RelativeLayout>
