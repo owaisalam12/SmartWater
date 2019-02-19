@@ -1,6 +1,7 @@
 package com.example.oalam.smartwater;
 
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -79,6 +80,20 @@ public class SensorSeekbarFragment extends Fragment {
                     levelTextView.setText(dbData.getLevel());
                     temperatureTextView.setText(dbData.getTemperature());
                     turbidityTextView.setText(dbData.getTurbidity());
+                    Double turb=Double.parseDouble(dbData.getTurbidity());
+                    Double level=Double.parseDouble(dbData.getLevel());
+                    Double temp=Double.parseDouble(dbData.getTemperature());
+
+                    seekbarTurb.setMax(1000);
+                    seekbarTurb.setEnabled(false);
+                    seekbarLvl.setEnabled(false);
+                    seekbarTemp.setEnabled(false);
+
+                    seekbarTurb.setProgress(Integer.valueOf(turb.intValue()));
+                    seekbarLvl.setProgress(Integer.valueOf(level.intValue()));
+                    seekbarTemp.setProgress(Integer.valueOf(temp.intValue()));
+
+
                     // waveLoadingView.setProgressValue(Integer.parseInt(dbData.getLevel()));
                     //waveLoadingView.setCenterTitle(dbData.getLevel()+"%");
                 }

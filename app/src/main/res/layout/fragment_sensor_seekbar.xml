@@ -53,6 +53,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
                 android:text="Turbidity"
+
                 android:textColor="@color/blue"
                 android:textSize="28dp" />
 

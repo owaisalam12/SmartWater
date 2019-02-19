@@ -151,20 +151,20 @@
             android:gravity="center">
 
             <TextView
-                android:id="@+id/currentWaterLevel"
+                android:id="@+id/currentWaterFlow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
-                android:text="Current Water Level: "
+                android:text="Current Water Flow: "
                 android:textColor="@color/blue"
                 android:textSize="25dp" />
 
             <TextView
 
-                android:id="@+id/currentWaterLevelValue"
+                android:id="@+id/currentWaterFlowValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/currentWaterLevel"
+                android:layout_toRightOf="@id/currentWaterFlow"
                 android:fontFamily="sans-serif-condensed"
                 android:text=""
 
@@ -176,7 +176,7 @@
                 android:id="@+id/estimatedTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/currentWaterLevel"
+                android:layout_below="@id/currentWaterFlow"
                 android:fontFamily="sans-serif-condensed"
                 android:text="Estimated Time: "
                 android:textColor="@color/blue"
@@ -186,7 +186,7 @@
                 android:id="@+id/estimatedTimeValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/currentWaterLevelValue"
+                android:layout_below="@id/currentWaterFlowValue"
                 android:layout_toRightOf="@id/estimatedTime"
                 android:fontFamily="sans-serif-condensed"
                 android:text=""
