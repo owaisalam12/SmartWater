@@ -17,6 +17,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.DecimalFormat;
+
 import me.itangqi.waveloadingview.WaveLoadingView;
 
 
@@ -27,7 +29,7 @@ public class SensorFragment extends Fragment {
 
     FirebaseDatabase database;
     DatabaseReference myRef;
-    TextView levelTextView, temperatureTextView, turbidityTextView, estimatedTimeTextView;
+    TextView levelTextView, temperatureTextView, turbidityTextView, estimatedTimeTextView,currentWaterFlowValue;
     WaveLoadingView waveLoadingView;
 
     public SensorFragment() {
@@ -46,6 +48,7 @@ public class SensorFragment extends Fragment {
         temperatureTextView = view.findViewById(R.id.temperatureValue);
         turbidityTextView = view.findViewById(R.id.turbidityValue);
         estimatedTimeTextView=view.findViewById(R.id.estimatedTimeValue);
+        currentWaterFlowValue=view.findViewById(R.id.currentWaterFlowValue);
 
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("Dummy/");
@@ -56,7 +59,7 @@ public class SensorFragment extends Fragment {
 
                 if ((dbData.getLevel() != null && !dbData.getLevel().isEmpty() && !dbData.getLevel().equals("null")) && (dbData.getTemperature() != null && !dbData.getTemperature().isEmpty() && !dbData.getTemperature().equals("null")) && (dbData.getTurbidity() != null && !dbData.getTurbidity().isEmpty() && !dbData.getTurbidity().equals("null"))) {
                     //int level=Integer.parseInt(dbData.getLevel());
-                    Toast.makeText(getActivity(), "Level:"+dbData.getLevel()+" Temp:"+dbData.getTemperature()+" Turb:"+dbData.getTurbidity()+" Flow:"+dbData.getFlow(), Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(getActivity(), "Level:"+dbData.getLevel()+" Temp:"+dbData.getTemperature()+" Turb:"+dbData.getTurbidity()+" Flow:"+dbData.getFlow(), Toast.LENGTH_SHORT).show();
                     int level=waterlevel(Integer.parseInt(dbData.getLevel()));
                     int percentage;
                     if(level==24){percentage=0;}
@@ -81,9 +84,12 @@ public class SensorFragment extends Fragment {
                     //temperatureTextView.setText(dbData.getTemperature());
                     //turbidityTextView.setText(dbData.getTurbidity());
 
-                    int Vol=(int)estimatedTime(waterlevel(Integer.parseInt(dbData.getLevel())));
-                    int time=Vol/Integer.parseInt(dbData.getFlow());
-                    estimatedTimeTextView.setText(String.valueOf(time));
+                    double Vol=estimatedTime(waterlevel(Integer.parseInt(dbData.getLevel())));
+                    double time=Vol/Double.parseDouble(dbData.getFlow());
+                    DecimalFormat df = new DecimalFormat("#.0");
+                    double t=time/60;
+                    estimatedTimeTextView.setText(String.valueOf(df.format(t))+" mins");
+                    currentWaterFlowValue.setText(dbData.getFlow()+" ltr/m");
 
                 }
             }

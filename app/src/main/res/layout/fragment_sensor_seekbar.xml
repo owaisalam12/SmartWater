@@ -150,7 +150,7 @@
                 android:layout_below="@id/LevelText"
                 android:layout_marginTop="5dp"
                 android:fontFamily="sans-serif"
-                android:text="Tempertaure"
+                android:text="Temperature"
                 android:textColor="@color/blue"
                 android:textSize="28dp" />
 

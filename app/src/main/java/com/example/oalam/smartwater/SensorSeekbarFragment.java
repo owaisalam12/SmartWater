@@ -9,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -59,6 +60,25 @@ public class SensorSeekbarFragment extends Fragment {
         levelTextView = view.findViewById(R.id.LevelValue);
         temperatureTextView = view.findViewById(R.id.temperatureValue);
         turbidityTextView = view.findViewById(R.id.turbidityValue);
+        seekbarTurb.setEnabled(false);
+        seekbarTurb.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return true;
+            }
+        });
+        seekbarLvl.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return true;
+            }
+        });
+        seekbarTemp.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return true;
+            }
+        });
 
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("data/");
@@ -85,9 +105,9 @@ public class SensorSeekbarFragment extends Fragment {
                     Double temp=Double.parseDouble(dbData.getTemperature());
 
                     seekbarTurb.setMax(1000);
-                    seekbarTurb.setEnabled(false);
-                    seekbarLvl.setEnabled(false);
-                    seekbarTemp.setEnabled(false);
+                    seekbarLvl.setMax(24);
+                    seekbarTemp.setMax(50);
+
 
                     seekbarTurb.setProgress(Integer.valueOf(turb.intValue()));
                     seekbarLvl.setProgress(Integer.valueOf(level.intValue()));
@@ -154,10 +174,11 @@ public class SensorSeekbarFragment extends Fragment {
         mProgressItem.color = R.color.green;
         progressItemList.add(mProgressItem);
         // green span
-        mProgressItem = new ProgressItem();
-        mProgressItem.progressItemPercentage = (greenSpan / totalSpan) * 100;
-        mProgressItem.color = R.color.red;
-        progressItemList.add(mProgressItem);
+
+//        mProgressItem = new ProgressItem();
+//        mProgressItem.progressItemPercentage = (greenSpan / totalSpan) * 100;
+//        mProgressItem.color = R.color.red;
+//        progressItemList.add(mProgressItem);
 
         seekbarTurb.initData(progressItemList);
         seekbarTurb.invalidate();
@@ -178,10 +199,10 @@ public class SensorSeekbarFragment extends Fragment {
         mProgressItem.color = R.color.green;
         progressItemList.add(mProgressItem);
         // green span
-        mProgressItem = new ProgressItem();
-        mProgressItem.progressItemPercentage = (greenSpan / totalSpan) * 100;
-        mProgressItem.color = R.color.red;
-        progressItemList.add(mProgressItem);
+//        mProgressItem = new ProgressItem();
+//        mProgressItem.progressItemPercentage = (greenSpan / totalSpan) * 100;
+//        mProgressItem.color = R.color.red;
+//        progressItemList.add(mProgressItem);
 
         seekbarLvl.initData(progressItemList);
         seekbarLvl.invalidate();
@@ -202,10 +223,10 @@ public class SensorSeekbarFragment extends Fragment {
         mProgressItem.color = R.color.green;
         progressItemList.add(mProgressItem);
         // green span
-        mProgressItem = new ProgressItem();
-        mProgressItem.progressItemPercentage = (greenSpan / totalSpan) * 100;
-        mProgressItem.color = R.color.red;
-        progressItemList.add(mProgressItem);
+//        mProgressItem = new ProgressItem();
+//        mProgressItem.progressItemPercentage = (greenSpan / totalSpan) * 100;
+//        mProgressItem.color = R.color.red;
+//        progressItemList.add(mProgressItem);
 
         seekbarTemp.initData(progressItemList);
         seekbarTemp.invalidate();

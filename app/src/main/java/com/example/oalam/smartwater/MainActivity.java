@@ -185,14 +185,15 @@ public class MainActivity extends AppCompatActivity implements OnMenuClickListen
 
         String phonenumber = new LoginActivity().getMynumber();
         String name = new LoginActivity().getMyname();
+        String mac=new LoginActivity().getMymac();
         prefName = name;
         String token = new LoginActivity().getMytoken();
         if (FirebaseAuth.getInstance().getCurrentUser() != null) {
             String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-            if ((phonenumber != null && !phonenumber.isEmpty() && !phonenumber.equals("null")) && (name != null && !name.isEmpty() && !name.equals("null")) && (userId != null && !userId.isEmpty() && !userId.equals("null")) && (token != null && !token.isEmpty() && !token.equals("null"))) {
+            if ((phonenumber != null && !phonenumber.isEmpty() && !phonenumber.equals("null")) && (name != null && !name.isEmpty() && !name.equals("null")) && (userId != null && !userId.isEmpty() && !userId.equals("null")) && (token != null && !token.isEmpty() && !token.equals("null")) && (mac != null && !mac.isEmpty() && !mac.equals("null"))) {
                 prefName = name;
                 headerTextView.setText(prefName);
-                userData userData = new userData(name, phonenumber, token);
+                userData userData = new userData(name, phonenumber, token,mac);
                 myRef.child(userId).setValue(userData);
             }
 
@@ -247,20 +248,26 @@ public class MainActivity extends AppCompatActivity implements OnMenuClickListen
         public String nameUser;
         public String phoneNumberUser;
         public String deviceTokenUser;
+        public String raspMAC;
 
         public userData() {
 
         }
 
-        public userData(String nameUser, String phoneNumberUser, String deviceTokenUser) {
+        public userData(String nameUser, String phoneNumberUser, String deviceTokenUser, String raspMAC) {
             this.nameUser = nameUser;
             this.phoneNumberUser = phoneNumberUser;
             this.deviceTokenUser = deviceTokenUser;
+            this.raspMAC=raspMAC;
 
         }
 
+
         public String getDeviceTokenUser() {
             return deviceTokenUser;
+        }
+        public String getraspMAC() {
+            return raspMAC;
         }
 
         public String getNameUser() {

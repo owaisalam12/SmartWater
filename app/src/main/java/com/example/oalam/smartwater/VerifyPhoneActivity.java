@@ -151,7 +151,9 @@ public class VerifyPhoneActivity extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                startActivity(new Intent(VerifyPhoneActivity.this, MainActivity.class));
+                if(taskSuccess) {
+                   // startActivity(new Intent(VerifyPhoneActivity.this, MainActivity.class));
+                }
                 mLoadingBtn.reset();
                 animateView.setVisibility(View.INVISIBLE);
             }
@@ -185,16 +187,16 @@ public class VerifyPhoneActivity extends AppCompatActivity {
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, code);
         signInWithCredential(credential);
     }
-
+    public boolean taskSuccess=false;
     private void signInWithCredential(PhoneAuthCredential credential) {
         mAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
+                    taskSuccess=true;
                     Intent intent = new Intent(VerifyPhoneActivity.this, MainActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
-
                 } else {
                     Toast.makeText(VerifyPhoneActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
 

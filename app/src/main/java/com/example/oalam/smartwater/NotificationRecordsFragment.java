@@ -117,7 +117,7 @@ public class NotificationRecordsFragment extends Fragment {
     }
 
     private String currentTime() {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("hh:mm:ss a");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss a");
         String time = dateFormat.format(new Date()).toString();
 
         return time;
